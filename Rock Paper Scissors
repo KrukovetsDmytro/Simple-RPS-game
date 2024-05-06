@@ -1,0 +1,26 @@
+import random
+
+player_score = 0
+opponent_score = 0
+
+while True:
+    x = input("Enter your choice (Rock, Paper, or Scissors), or 'quit' to end: ").capitalize()
+    if x == "Quit":
+        break
+
+    choices = ["Rock", "Paper", "Scissors"]
+    y = random.choice(choices)
+
+    if x == y:
+        print(f"Opponent chose {y}")
+        print("Draw")
+    elif (x == "Rock" and y == "Scissors") or (x == "Paper" and y == "Rock") or (x == "Scissors" and y == "Paper"):
+        print(f"Opponent chose {y}")
+        print("You win")
+        player_score += 1
+    else:
+        print(f"Opponent chose {y}")
+        print("Opponent wins")
+        opponent_score += 1
+
+print(f"Final Score - You: {player_score}, Opponent: {opponent_score}")
